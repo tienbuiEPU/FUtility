@@ -1,0 +1,4 @@
+﻿<div class="image-container" ng-repeat="file in files">
+    <img class="thumbnail" ng-init="loadImage(file);" src="{{ file.base64String }}" />
+    <a href="javascript:;" style="color:red;text-align:center;" ng-click="Delete($event,file.name);">Xóa</a>
+</div>

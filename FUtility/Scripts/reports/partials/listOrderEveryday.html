@@ -1,0 +1,58 @@
+﻿<div style="display:flex; font-weight:bold; margin: 0 0 10pt 20pt">
+    <i> Ngày lập: {{today | date : 'dd/MM/yyyy' }} </i>
+</div>
+<div class="center">
+    <h1>
+        Báo cáo cuối ngày về bán hàng
+    </h1>
+    <br />
+    <p>
+        <span> Ngày bán: {{today | date : 'dd/MM/yyyy' }} </span>
+        <br />
+        <span> Chi nhánh {{ shopName }} </span>
+    </p>
+</div>
+
+<div style="border-top:2px solid black; margin-bottom:24pt; page-break-inside:avoid">
+    <div style="display:flex; font-weight:bold; margin: 0 0 10pt 20pt">
+        <div style="width: 140px; text-align: center;">
+            Mã chứng từ
+        </div>
+        <div style="width: 150px; text-align: center;">
+            Thời gian
+        </div>
+        <div style="width: 140px; text-align: center;">
+            SL sản phẩm
+        </div>
+        <div style="text-align:right; width:140px">
+            Doanh thu
+        </div>
+        <div style="text-align:right; width:140px">
+            Thu khác
+        </div>
+        <div style="text-align:right; width:140px">
+            Thực thu
+        </div>
+    </div>
+
+    <div style="display: flex; margin: 0 0 6pt 20pt" ng-repeat="order in listEverydayOrder">
+        <div style="width: 200px; text-align: center;">
+            {{ order.OrderId }}
+        </div>
+        <div style="width: 150px; text-align: center;">
+            {{ order.CreatedAt | date:'h:mm:ss' }}
+        </div>
+        <div style="width: 140px; text-align: center;">
+            {{ order.Quantity | number }}
+        </div>
+        <div style="text-align:right; width:140px">
+            {{ order.TotalPrice | currency }}
+        </div>
+        <div style="text-align:right; width: 140px">
+            {{ order.DeliveryPrice | currency }}
+        </div>
+        <div style="text-align:right; width:140px">
+            {{ order.Paid | currency }}
+        </div>
+    </div>
+</div>

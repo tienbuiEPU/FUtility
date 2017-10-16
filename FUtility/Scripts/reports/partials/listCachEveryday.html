@@ -1,0 +1,82 @@
+﻿<div style="display:flex; font-weight:bold; margin: 0 0 10pt 20pt">
+    <i> Ngày lập: {{today | date : 'dd/MM/yyyy h:mm:ss' }} </i>
+</div>
+<div class="center">
+    <h1>
+        Báo cáo cuối ngày về thu chi
+    </h1>
+    <br />
+    <p>
+        <span> Ngày bán: {{today | date : 'dd/MM/yyyy' }} </span>
+        <br />
+        <span> Chi nhánh {{ shopName }} </span>
+    </p>
+</div>
+
+<div style="border-top:2px solid black; margin-bottom:24pt; page-break-inside:avoid">
+
+    <div style="display:flex; font-weight:bold; margin: 0 0 10pt 20pt">
+        <div style="width: 140px; text-align: center;">
+            Mã phiếu thu/chi
+        </div>
+        <div style="text-align:right; width:140px">
+            Thời gian
+        </div>
+        <div style="width: 140px; text-align: center;">
+            Thu/Chi
+        </div>
+        <div style="width: 150px; text-align: center;">
+            Người nộp/nhận
+        </div>
+        <div style="text-align:right; width:140px">
+            Đa thu / chi
+        </div>
+        <div style="text-align:right; width:140px">
+            Tổng tiền
+        </div>
+    </div>
+
+    <div style="display: flex; margin: 0 0 6pt 20pt" ng-repeat="cash in cashes">
+        <div style="width: 200px; text-align: center;">
+            {{ cash.CashCode }}
+        </div>
+        <div style="width: 150px; text-align: center;">
+            {{ cash.CreatedAt | date:'h:mm:ss' }}
+        </div>
+        <div style="width: 140px; text-align: center;">
+            {{ cash.cashType.Name }}
+        </div>
+        <div style="text-align:right; width:140px">
+            {{ cash.paidTarget.TargetName }}
+        </div>
+        <div style="text-align:right; width: 140px">
+            {{cash.PaidAmount | formatPrice }}
+        </div>
+        <div style="text-align:right; width: 140px">
+            {{ cash.Total | formatPrice }}
+        </div>
+
+    </div>
+
+    <!--<div style="display:flex; font-weight:bold; margin: 0 0 10pt 20pt">
+        <div style="width: 140px; text-align: center;">
+            
+        </div>
+        <div style="text-align:right; width:140px">
+            
+        </div>
+        <div style="width: 140px; text-align: center;">
+            
+        </div>
+        <div style="width: 150px; text-align: center;">
+            
+        </div>
+        <div style="text-align:right; width:140px">
+            {{ metadata.TotalPaid | formatPrice }}
+        </div>
+        <div style="text-align:right; width:140px">
+            {{ metadata.Total | formatPrice }}
+        </div>
+    </div>-->
+
+</div>

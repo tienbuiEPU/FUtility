@@ -1,0 +1,92 @@
+﻿
+<!doctype html>
+<html class="fixed" ng-app="DragonApp" ng-cloak>
+
+<head>
+    <!-- Basic -->
+    <meta charset="UTF-8">
+    <title>@ViewBag.Title</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="dragonviet" />
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- Web Fonts  -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+    <link href="/Content/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/vendor/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="/Content/vendor/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Content/vendor/pnotify/pnotify.custom.css" />
+
+    <link href="/Content/vendor/jstree/themes/default/style.css" rel="stylesheet" />
+
+    <link href="/Content/vendor/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+    <link href="/Content/vendor/bootstrap-fileupload/bootstrap-fileupload.min.css" rel="stylesheet" />
+
+    <link href="/Content/vendor/select2/select2.css" rel="stylesheet" />
+    <link href="/Content/vendor/jquery-datatables-bs3/assets/css/datatables.css" rel="stylesheet" />
+
+    <link href="/Content/stylesheets/theme.css" rel="stylesheet" />
+    <link href="/Content/stylesheets/theme-custom.css" rel="stylesheet" />
+
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/angular-material.css" rel="stylesheet" />
+    <link href="~/Content/datetimepicker.css" rel="stylesheet" />
+    <link href="~/Content/loading-bar.min.css" rel="stylesheet" />
+    <link href="~/Content/ngDialog.min.css" rel="stylesheet" />
+    <link href="~/Content/ui-bootstrap-csp.css" rel="stylesheet" />
+    <link href="~/Content/develop/css/styleMain.css" rel="stylesheet" />
+
+    <script src="/Content/vendor/modernizr/modernizr.js"></script>
+
+
+
+</head>
+<body>
+    <section class="body">
+        <!-- start: header -->
+        @Html.Partial("_Header")
+        <!-- end: header -->
+        <div class="inner-wrapper">
+            <!-- start: sidebar -->
+            <!-- end: sidebar -->
+            <section role="main" class="content-body" style="margin-left: 0px; background: #fafafa">
+                <!-- start: page -->
+                <div class="row">
+                    @RenderBody()
+                </div>
+                <!-- end: page -->
+            </section>
+        </div>
+        @*@Html.Partial("_SideBar")*@
+    </section>
+
+
+
+    <script src="/Content/vendor/jquery/jquery.js"></script>
+    <script src="/Content/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+    <script src="/Content/vendor/jquery-cookie/jquery.cookie.js"></script>
+    <script src="/Content/vendor/bootstrap/js/bootstrap.js"></script>
+
+
+    @Scripts.Render("~/bundles/angularjs")
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.2.0/angularfire.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    @*@System.Web.Optimization.Scripts.Render("~/bundles/appjs")*@
+
+
+    @RenderSection("script", false)
+
+</body>
+</html>

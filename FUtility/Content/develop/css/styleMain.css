@@ -1,0 +1,28 @@
+﻿.data-modal {
+    width: 80%;
+    display: inline-block;
+}
+
+.warning-data {
+    color: red;
+    display: inline-block;
+}
+
+.form-input {
+    padding: 5px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+#thumbnail img {
+    max-height: 200px;  
+}
+
+.box-data {
+    padding : 5px;
+    background: lightblue;
+}
+
+.image-result {
+    max-height: 300px;
+}

@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "createWatermark";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create Application Watermark</h2>
+
+<div ng-app="myApp" class="container">
+    <div class="row" ng-controller="UploadController">
+        <div class="form-group">
+            <div class="col-md-6 box-data">
+                <div class="form-input">
+                    <label>Source: </label>
+                    <input type="url" ng-model="imgSource" />
+                    @*<input id="files" type="file" style="display: inline-block;" accept="image/png,image/gif,image/bmp,image/jpg,image/jpeg" ng-file-select="onFileSelect($files)" />*@
+                </div>
+                <div class="form-input">
+                    <label>Watermark: </label>
+                    <input type="url" ng-model="imgMark" />
+                    @*<input id="files2" type="file" style="display: inline-block;" accept="image/png,image/gif,image/bmp,image/jpg,image/jpeg" ng-file-select="onFileSelect($files)" />*@
+                </div>
+                <div class="form-input">
+                    <button class="btn btn-default" ng-click="actionWaterMark();">ActionMark</button>
+                </div>
+                <div class="form-input">
+                    <label>Result: </label>
+                    <img class="image-result" src="{{ linkResult }}" />
+                </div>
+            </div>
+            <div class="col-md-6" id="thumbnail">
+                <div style="">
+                    @*<productimage files="files"></productimage>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

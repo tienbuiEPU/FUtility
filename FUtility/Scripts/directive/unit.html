@@ -1,0 +1,10 @@
+﻿<div class="form-group row">
+    <input type="text" class="form-control inputTT" placeholder="Đơn vị" ng-model="newUnit.Name" required>
+    <span class="err_msg2" ng-show="newUnit.Name == ''">*</span>
+    <input type="text" class="form-control inputTT text-right" placeholder="Số lượng" ng-model="newUnit.Value" required>
+    <span class="err_msg2" ng-show="newUnit.Value == ''">*</span>
+    <input type="text" class="form-control inputTT text-right" placeholder="Giá bán" ng-model="newUnit.Price" format="displayprice">
+    <button type="button" class="btn-close" ng-click="Delete($event)">
+        <span class="ion-ios-close-empty"></span>
+    </button>
+</div>

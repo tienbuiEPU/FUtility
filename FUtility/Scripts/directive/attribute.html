@@ -1,0 +1,37 @@
+﻿<fieldset>
+    <legend>Nhóm thuộc tính:</legend>
+    <div class="form-group row" style="padding-bottom: 10px">
+        <label for="input" class="col-form-label label_1">Thuộc tính</label>
+        <label for="input" class="col-form-label label_2">Giá trị</label>
+    </div>
+    <div class="form-group row">
+        <table width="100%">
+            <tr ng-repeat=" attr in attrs.data">
+                <td>{{ findName(attr.AttributeId) }}</td>
+                <td>{{ attr.Value }}</td>
+                <td>
+                    <button type="button" class="btn-close" ng-click="deleteAttr(attr.AttributeId);">
+                        <span class="ion-ios-close-empty"></span>
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <div class="selectbox-Sp left">
+            <select class="form-control" id="ddlAttribute" ng-model="newAttr.AttributeId" ng-init="newAttr.AttributeId = '-1'">
+                <option value="-1">-- Lựa chọn thuộc tính --</option>
+                <option ng-repeat=" attribute in attributes" value="{{ attribute.AttributeId }}">{{ attribute.AttributeName }}</option>
+            </select>
+            <button class="plus-btn" data-toggle="modal"
+                    data-target="#createAttribute">
+                +
+            </button>
+        </div>
+        <input type="text" class="form-control inputTT" placeholder="Giá trị" ng-model="newAttr.Value">   
+    </div>
+    <button type="button" class="btn btn-secondary" ng-click="addAttr();">
+        Thêm thuộc tính <span class="ion-ios-plus-empty"></span>
+    </button>
+    <button type="button" class="btn btn-secondary" ng-click="Delete($event);">
+        Xóa nhóm thuộc tính <span class="ion-ios-trash"></span>
+    </button>
+</fieldset>
